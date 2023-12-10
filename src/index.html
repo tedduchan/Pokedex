@@ -1,16 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <h1>Hola</h1>
-    <!-- <img src="./assets/images/cute-cat.webp" alt="" /> -->
-    <script type="module" src="./js/index.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<link
+		href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+		rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<title></title>
+	</head>
+	<body>
+		<div class="bg-image">
+			<img src="./assets/images/pokeball-bg-dark.png" alt="Pokeball" >
+		  </div>
+		<main>
+			<div id="" class="header">
+				<img src="./assets/images/pokeball.svg" alt="" />
+				<h2>Pokédex</h2>
+				<input class="input" type="checkbox" id="toggle"/>
+				<label class="label" for="toggle"></label>
+			</div>
+			<div class="select-container">
+				<select id="selectGen" name="options" class="selectStyle">
+					<option value="" selected>Selecciona Generación</option>
+					<option value="opcion1">Generación 1 (Kanto)</option>
+					<option value="opcion2">Generación 2 (Johto)</option>
+					<option value="opcion3">Generación 3 (Hoenn)</option>
+					<option value="opcion4">Generación 4 (Sinnoh)</option>
+					<option value="opcion5">Generación 5 (Teselia)</option>
+					<option value="opcion6">Generación 6 (Kalos)</option>
+					<option value="opcion7">Generación 7 (Alola)</option>
+					<option value="opcion8">Generación 8 (Galar)</option>
+					<option value="opcion9">Generación 9 (Paldea)</option>
+				</select>
+			</div>
+			<div class="search-container">
+				<div class="search-icon">
+					<img src="./assets/images/search.svg" alt=""> 
+				    <i class="fas fa-search"></i>
+				</div>
+				<input type="text" placeholder="¿Qué Pokémon estás buscando?" class="search-input">
+			  </div>
+			  <div class="headerGen">
+				<img id="iconPkmn" src="./assets/images/Psyduck.png" alt="" />
+				  <h2>Generación 1 (Kanto)</h2>
+			  </div>
+
+			<div id="AllCards" class="cardsContainer">
+				<div class="card">
+					<div class="pkmnNumber">#001</div>
+					<div class="cardBg">
+						<img id="" src="./assets/images/pkbll-bg.png" alt="" />
+					</div>
+					<div class="pkmnImage">
+						<img  id="" src="./assets/images/Bulbasaur.png" alt="" />
+					</div>
+					<div class="cardText">
+						Bulbasaur
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</main>
+		<script type="module" src="./js/index.js"></script>
+	</body>
 </html>
