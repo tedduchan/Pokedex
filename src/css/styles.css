@@ -362,6 +362,10 @@ fill: rgba(32, 39, 51, 0.80);
 filter: drop-shadow(0 0 5.100000000000023px rgba(255,255,255,.2))
 }
 
+.info-container::-webkit-scrollbar-track {
+    background-color: transparent; /* Color de fondo del scrollbar */
+}
+
 .description{
 	justify-content: center;
     display: flex;
@@ -473,4 +477,32 @@ margin-left: 20px;
     gap: 0px;
     flex-wrap: wrap;
 }
-  
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+span.centered {
+    text-align: center;
+}
+
+.inline-flex{
+	display: inline-flex;
+	flex-direction: row-reverse;
+}
+
+.flexRow{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+	padding-bottom: 15px;
+}
+
+#screamButton:hover{
+	filter: drop-shadow(0 0 5.100000000000023px rgba(34,255,0,.655));
+	cursor: pointer;
+}

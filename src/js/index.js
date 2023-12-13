@@ -88,8 +88,21 @@ const chargePkmn = async () => {
 	}
 };
 
+const toggleShiny = pokeData => {
+	const pokeImageElement = document.getElementById('pokeImage');
+	const buttonShiny = document.getElementById('screamButton');
+	if (pokeImageElement.src.includes('shiny')) {
+		pokeImageElement.src =
+			pokeData.sprites.other['official-artwork'].front_default;
+		buttonShiny.textContent = 'Ver shiny';
+	} else {
+		pokeImageElement.src =
+			pokeData.sprites.other['official-artwork'].front_shiny;
+		buttonShiny.textContent = 'Ver normal';
+	}
+};
+
 const openPokemon = async event => {
-	console.log(event.target.closest('.card'));
 	if (event.target.closest('.card') != null) {
 		pokeGridElement.classList.add('hidden');
 		pokeViewElement.classList.remove('hidden');
@@ -103,6 +116,85 @@ const openPokemon = async event => {
 		const newSpan = document.createElement('span');
 		newSpan.textContent = changePokeNumber(pokeData.id);
 		pokeViewHeaderElement.append(newSpan);
+		let newDiv = document.createElement('div');
+		newDiv.classList.add('pkmn-container');
+		let newImg = document.createElement('img');
+		newImg.id = 'pokeImage';
+		newImg.classList.add('image-size');
+		newImg.src = pokeData.sprites.other['official-artwork'].front_default;
+		newDiv.append(newImg);
+		pokeViewElement.append(newDiv);
+		newDiv = document.createElement('div');
+		newDiv.classList.add('type');
+
+		for (const pokeType of pokeData.types) {
+			newImg = document.createElement('img');
+			newImg.src = `../assets/images/${pokeType.type.name}.svg`;
+			newImg.alt = pokeType.type.name;
+			newDiv.append(newImg);
+		}
+		pokeViewElement.append(newDiv);
+		const newDivContainer = document.createElement('div');
+		newDivContainer.classList.add('info-container');
+		const newDivDescription = document.createElement('div');
+		newDivDescription.classList.add('description');
+		const newSpanDesc = document.createElement('span');
+		newSpanDesc.classList.add('marg-left20');
+		newSpanDesc.textContent = 'Descripción';
+		newDivDescription.append(newSpanDesc);
+		const newDivShiny = document.createElement('div');
+		newDivShiny.id = 'screamButton';
+		newDivShiny.classList.add('marg-left80', 'rounded');
+		newDivShiny.textContent = 'Ver shiny';
+		newDivDescription.append(newDivShiny);
+		newDivContainer.append(newDivDescription);
+		const newDivInfo = document.createElement('div');
+		newDivInfo.classList.add('text');
+		newDivInfo.id = 'pokeInfo';
+		const pokemonSpeciesData = await fetchData(
+			`https://pokeapi.co/api/v2/pokemon-species/${pokeData.name}`
+		);
+		const descriptionEntries = pokemonSpeciesData.flavor_text_entries;
+		const spainDescription = descriptionEntries.find(
+			pokeDescription => pokeDescription.language.name === 'es'
+		);
+		newDivInfo.textContent = spainDescription.flavor_text;
+		newDivContainer.append(newDivInfo);
+		const newDivCharacteristics = document.createElement('div');
+		newDivCharacteristics.classList = 'flexRow';
+		let newDivColumn = document.createElement('div');
+		newDivColumn.classList = 'flexColumn';
+		const newSpanWeight = document.createElement('span');
+		newSpanWeight.classList = 'inline-flex';
+		const newImgWeight = document.createElement('img');
+		newImgWeight.src = '../assets/images/weight.svg';
+		newSpanWeight.textContent = `${pokeData.weight}kg`;
+		const newSpanPeso = document.createElement('span');
+		newSpanPeso.classList.add('centered');
+		newSpanWeight.append(newImgWeight);
+		newSpanPeso.textContent = 'Peso';
+		newDivColumn.append(newSpanWeight, newSpanPeso);
+		newDivCharacteristics.append(newDivColumn);
+
+		newDivColumn = document.createElement('div');
+		newDivColumn.classList = 'flexColumn';
+		const newSpanHeight = document.createElement('span');
+		newSpanHeight.classList = 'inline-flex';
+		const newImgHeight = document.createElement('img');
+		newImgHeight.src = '../assets/images/height.svg';
+		newSpanHeight.textContent = `${pokeData.height}m`;
+		const newSpanAltura = document.createElement('span');
+		newSpanAltura.classList.add('centered');
+		newSpanAltura.textContent = 'Altura';
+		newSpanHeight.append(newImgHeight);
+		newDivColumn.append(newSpanHeight, newSpanAltura);
+		newDivCharacteristics.append(newDivColumn);
+		newDivContainer.append(newDivCharacteristics);
+
+		pokeViewElement.append(newDivContainer);
+
+		const buttonShiny = document.getElementById('screamButton');
+		buttonShiny.addEventListener('click', () => toggleShiny(pokeData));
 	}
 };
 
