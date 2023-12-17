@@ -21,7 +21,7 @@
 			<img src="./assets/images/pokeball-bg-dark.png" alt="Pokeball" >
 		  </div>
 		<div class="pokedex_container">
-			<div id="" class="header">
+			<div class="header">
 				<img src="./assets/images/pokeball.svg" alt="" />
 				<h2>Pokédex</h2>
 				<input class="input" type="checkbox" id="toggle"/>
@@ -29,16 +29,15 @@
 			</div>
 			<div class="select-container">
 				<select id="selectGen" name="options" class="selectStyle">
-					<option value="" selected>Selecciona Generación</option>
-					<option value="opcion1">Generación 1 (Kanto)</option>
-					<option value="opcion2">Generación 2 (Johto)</option>
-					<option value="opcion3">Generación 3 (Hoenn)</option>
-					<option value="opcion4">Generación 4 (Sinnoh)</option>
-					<option value="opcion5">Generación 5 (Teselia)</option>
-					<option value="opcion6">Generación 6 (Kalos)</option>
-					<option value="opcion7">Generación 7 (Alola)</option>
-					<option value="opcion8">Generación 8 (Galar)</option>
-					<option value="opcion9">Generación 9 (Paldea)</option>
+					<option value="Generación 1 (Kanto)" selected>Generación 1 (Kanto)</option>
+					<option value="Generación 2 (Johto)">Generación 2 (Johto)</option>
+					<option value="Generación 3 (Hoenn)">Generación 3 (Hoenn)</option>
+					<option value="Generación 4 (Sinnoh)">Generación 4 (Sinnoh)</option>
+					<option value="Generación 5 (Teselia)">Generación 5 (Teselia)</option>
+					<option value="Generación 6 (Kalos)">Generación 6 (Kalos)</option>
+					<option value="Generación 7 (Alola)">Generación 7 (Alola)</option>
+					<option value="Generación 8 (Galar)">Generación 8 (Galar)</option>
+					<option value="Generación 9 (Paldea)">Generación 9 (Paldea)</option>
 				</select>
 			</div>
 			<div class="search-container">
@@ -50,7 +49,7 @@
 			  </div>
 			  <div class="headerGen">
 				
-				  <h2>Generación 1 (Kanto)</h2>
+				  <h2 id="generationName">Generación 1 (Kanto)</h2>
 			  </div>
 
 			<div id="allCards" class="cardsContainer">
@@ -68,127 +67,26 @@
 
 			</div>
 			
-				
-	
+			<div class="pkmn-container2">
+			<img id ="pokeImageLoader" class = "block" src = "./assets/images/pokeball.gif">
+		</div>
 				<div class="info-container">
 					
+					
 
 
 
 
 
 					
-					<div class="flexRow">
-						<div class="flexColumn">
-							<span class="inline-flex">
-								<img  src="./assets/images/weight.svg" alt="" />
-								6,9kg
-							</span>
-							<span class="centered">Peso</span>
-						</div>
-						<div class="flexColumn">
-							<span class="inline-flex">
-								<img  src="./assets/images/height.svg" alt="" />
-								0,7m
-							</span>
-							<span class="centered">Altura</span>
-						</div>
-						
-					</div>
-					<div></div>
-					<span class="marg-left20">Evolución</span>
-					<div class="minisContainer">
-						<div class="pokeMini">
-							<img src="./assets/images/evo1.png" alt="" />
-							<span class="textMini">Bulbasaur</span>
-						</div>
-						<div class="pokeMini">
-							<img src="./assets/images/evo.png" alt="" />
-							<span class="textMini">Ivysaur</span>
-						</div>
-						<div class="pokeMini">
-							<img src="./assets/images/evo3.png" alt="" />
-							<span class="textMini">Venusaur</span>
-						</div>
-					</div>
-					<span class="marg-left20">Puntos de base</span>
-					<div id="statsContainer" class="statsStyle">
-						<div>
-							<span>HP</span>
-							<span>045</span>
-							<span class="prog-bar"></span>
-							
-						</div>
-						<div>
-							<span>ATK</span>
-							<span>049</span>
-							<span class="prog-bar"></span>
-						</div>
-						<div>
-							<span>DEF</span>
-							<span>049</span>
-							<span class="prog-bar"></span>
-						</div>
-						<div>
-							<span>SATK</span>
-							<span>065</span>
-							<span class="prog-bar"></span>
-						</div>
-						<div>
-							<span>SDEF</span>
-							<span>065</span>
-							<span class="prog-bar"></span>
-						</div>
-						<div>
-							<span>SPD</span>
-							<span>045</span>
-							<span class="prog-bar"></span>
-						</div>
-					</div>
-					<span class="marg-left20 ">Debilidades y Resistencias</span>
-					<div id="statsContainer" class="weeknesStyle">
-						<div>
-							<span>Superdébil x4</span>
-							
-							<span class="weekness">Ninguno</span>
-							
-						</div>
-						<div >
-							<span>Débil x2</span>
-							
-							<span class="weekness"><img src="./assets/images/planta.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" /></span>
-						</div>
-						<div>
-							<span>Normal x1</span>
-							
-							<span class="weekness"><img src="./assets/images/planta.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" /></span>
-						</div>
-						<div>
-							<span>Resistente x1/2</span>
-							
-							<span class="weekness"><img src="./assets/images/planta.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" /></span>
-						</div>
-						<div>
-							<span>Superesistente x1/4</span>
-							
-							<span class="weekness"><img src="./assets/images/planta.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" />
-							</span>
-						</div>
-						<div>
-							<span>Inmune x0</span>
-							
-							<span class="weekness"><img src="./assets/images/planta.svg" alt="" />
-								<img src="./assets/images/veneno.svg" alt="" /></span>
-						</div>
-					</div>
+					
+					
+					
+					
+					
+					
+					
+					
 
 				</div>
 			

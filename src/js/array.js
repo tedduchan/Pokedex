@@ -1,0 +1,21 @@
+export const typeArray = [
+	0,
+	'normal',
+	'fighting',
+	'flying',
+	'poison',
+	'ground',
+	'rock',
+	'bug',
+	'ghost',
+	'steel',
+	'fire',
+	'water',
+	'grass',
+	'electric',
+	'psychic',
+	'ice',
+	'dragon',
+	'dark',
+	'fairy'
+];
