@@ -143,6 +143,20 @@ a {
 	;
 	border-radius: 6px; 
   }
+
+  .info-container::-webkit-scrollbar {
+	width: 3px; 
+  }
+  
+  .info-container::-webkit-scrollbar-track {
+	background: transparent; 
+  }
+  
+  .info-container::-webkit-scrollbar-thumb {
+	background-color: #4b4e63;
+	;
+	border-radius: 6px; 
+  }
 .cardBg{
 	right: 0;
     position: absolute;
